@@ -18,12 +18,31 @@ class EmployeePayrollData {
         else throw 'Name is Incorrect!';
     }
 
-    get startDate() {return this._startDate;}
+    get department() { return this._department; }
+    set department(department) {
+        this._department = department;
+    }
+
+    get salary() { return this._salary; }
+    set salary(salary) {
+        this._salary = salary;
+    }
+
+    get notes() { return this._notes; }
+    set notes(notes) {
+        this._notes = notes;
+    }
+
+    get startDate() { return this._startDate; }
     set startDate(startDate) {
         if (startDate < Date.now()) {
-            console.log("hjhkh");
             this._startDate = startDate;
         } else throw 'Date is invalid!';
+    }
+
+    get profilePic() { return this._profilePic; }
+    set profilePic(profilePic) {
+        this._profilePic = profilePic;
     }
 
     // method
@@ -66,5 +85,4 @@ const output = document.querySelector('.salary-output');
 output.textContent = salary.value;
 salary.addEventListener('input', function () {
     output.textContent = salary.value;
-    save();
 });
